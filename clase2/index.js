@@ -27,14 +27,14 @@ class ProductManager {
 
   getProductById = (id) => {
     const product = this.products.find((el) => el.id === id);
-    if (product === undefined) throw Error("Debe ingresar un id de evento");
+    if (product === undefined) throw Error("debe ingresar un id de producto existente");
     
     return product;
   };
 }
 
 let productos = new ProductManager();
-
+// pruebas 
 productos.addProduct("hola", "probando", 24, "assdd", 1, 23);
 productos.addProduct("hola", "probando", 25, "assdd", 2, 23);
 productos.addProduct("hola", "probando", 24, "assdd", 3, 23);
