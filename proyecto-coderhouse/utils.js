@@ -22,10 +22,7 @@ const readFile = async (file) => {
 };
 
 const writeFile = async (file, data) => {
-  const existe = await fileExist(file);
-  if (existe === true) {
-    await deleteFile(file);
-  }
+ 
   try {
     await fs.promises.writeFile(file, JSON.stringify(data));
     return true;
