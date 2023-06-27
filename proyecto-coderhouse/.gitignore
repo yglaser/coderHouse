@@ -1,0 +1,5 @@
+# Ignore package.json file
+package.json
+
+# Ignore the entire node_modules directory
+node_modules/
