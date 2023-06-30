@@ -89,9 +89,9 @@ class ProductManager {
   };
 }
 // pruebas
-let productosManagerV1 = new ProductManager("./productos.json");
-console.log(await productosManagerV1.getProducts());
-console.log(
+/* let productosManagerV1 = new ProductManager("./productos.json");
+console.log(await productosManagerV1.getProducts()); */
+/* console.log(
   await productosManagerV1.addProduct(
     "producto prueba",
     "este es un producto prueba",
@@ -100,8 +100,8 @@ console.log(
     123,
     24
   )
-);
-console.log(await productosManagerV1.getProducts());
+); */
+/* console.log(await productosManagerV1.getProducts());
 console.log(await productosManagerV1.getProductById(0));
 console.log(
   await productosManagerV1.updateProductById({
@@ -115,4 +115,6 @@ console.log(
   })
 );
 console.log(await productosManagerV1.getProducts());
-console.log(await productosManagerV1.deleteProduct(0));
+console.log(await productosManagerV1.deleteProduct(0)); */
+
+export default ProductManager
