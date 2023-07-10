@@ -1,7 +1,4 @@
-import fs from "fs";
-
 import utils from "../../utils.js";
-import { error } from "console";
 class ProductManager {
   static producto;
   static products;

@@ -1,5 +1,3 @@
-import fs from "fs";
-
 import utils from "../../utils.js";
 class CarritoManager {
   static correlativoId = 0;
@@ -32,37 +30,33 @@ class CarritoManager {
   getCarritosById = async (id) => {
     this.carritos = await this.getCarritos(id);
     const carrito = this.carritos.find((el) => el.id === id);
-    
+
     if (!carrito || carrito === undefined) {
       let error = new Error("debe ingresar un id de carrito existente");
       error.statusCode = 400;
       throw error;
-
     }
 
     return carrito;
   };
 
   getIndexProductFromCarrito = async (carrito, idProduct) => {
-    
     if (carrito.products) {
-      
-      const productIndex = carrito.products.findIndex((el) => el.id === idProduct);
-    
+      const productIndex = carrito.products.findIndex(
+        (el) => el.id === idProduct
+      );
       return productIndex;
     }
     return -1;
   };
   addProductToCarrito = async (id, idProduct) => {
-
     this.carritos = await this.getCarritos();
     let carrito = await this.getCarritosById(id);
 
     if (!carrito) {
-      let error =   new Error("no existe carrito");
+      let error = new Error("no existe carrito");
       error.statusCode = 400;
       throw error;
-     
     }
     const carritoIndex = this.carritos.findIndex(
       (carrito) => carrito.id === id
@@ -83,6 +77,5 @@ class CarritoManager {
     utils.writeFile(this.path, this.carritos);
   };
 }
-
 
 export default CarritoManager;
